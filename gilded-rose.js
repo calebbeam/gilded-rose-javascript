@@ -118,7 +118,7 @@ export const updateQuality = () => {
       item.quality = 0;
     }
     //Aged Brie Logic
-    if (item.name == "Aged Brie" && item.quality < 50){
+    if (item.name == "Aged Brie" && item.quality < 50) {
       item.quality++;
       item.sellIn--;
     }

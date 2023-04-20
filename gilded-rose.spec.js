@@ -13,7 +13,11 @@ describe("updateQuality", () => {
   });
 
   it("increases quality of tickets by 2 if less than 11 days to sellIn", () => {
-    const testItem2 = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 20);
+    const testItem2 = new Item(
+      "Backstage passes to a TAFKAL80ETC concert",
+      9,
+      20
+    );
     items.push(testItem2);
 
     updateQuality();
@@ -81,6 +85,4 @@ describe("updateQuality", () => {
     expect(testItem5.quality).toBe(4);
     expect(testItem5.sellIn).toBe(2);
   });
-
 });
-
