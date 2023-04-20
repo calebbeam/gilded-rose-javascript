@@ -5,5 +5,20 @@
   },
   "devDependencies": {
     "vitest": "^0.26.3"
-  }
+  },
+  "name": "gilded-rose-javascript",
+  "description": "Hi and welcome to team Gilded Rose.",
+  "version": "1.0.0",
+  "main": "gilded-rose.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebbeam/gilded-rose-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calebbeam/gilded-rose-javascript/issues"
+  },
+  "homepage": "https://github.com/calebbeam/gilded-rose-javascript#readme"
 }
