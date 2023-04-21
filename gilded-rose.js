@@ -13,7 +13,7 @@ items.push(new Item("+5 Dexterity Vest", 10, 20));
 items.push(new Item("Aged Brie", 2, 0)); //increases quality as sellIn goes down
 items.push(new Item("Elixir of the Mongoose", 5, 7));
 items.push(new Item("Sulfuras, Hand of Ragnaros", 0, 80)); //no sellIn and quality always 80
-items.push(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)); //increase quality as sellIn goes down, after sellIn, quality = 0
+items.push(new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)); //increase quality as sellIn goes down, after sellIn, quality = 0
 items.push(new Item("Conjured Mana Cake", 3, 6));
 
 // export const updateQuality = () => {
@@ -90,12 +90,15 @@ export const updateQuality = () => {
     }
     //concert logic
     if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
+      item.sellIn = item.sellIn - 1;
       if (item.sellIn < 11 && item.quality < 50) {
         item.quality = item.quality + 2;
-        item.sellIn--;
       }
       if (item.sellIn < 6 && item.quality < 50) {
-        item.quality--;
+        item.quality = item.quality + 1;
+      }
+      if (item.sellIn < 0){
+        item.quality = item.quality - item.quality
       }
     }
     //conjured logic
@@ -103,8 +106,8 @@ export const updateQuality = () => {
       item.quality -= 2;
       item.sellIn--;
     }
-    //quality is never more than 50
-    if (item.quality >= 50 && item.name != "Sulfuras, Hand of Ragnaros") {
+    //quality is never more than 50, unless special item
+    if (item.quality >= 50 && item.name != "Sulfuras, Hand of Ragnaros" && item.name != "Backstage passes to a TAFKAL80ETC concert") {
       item.quality = 50;
       item.sellIn--;
     }
@@ -124,3 +127,6 @@ export const updateQuality = () => {
     }
   }
 };
+
+updateQuality()
+console.log(items)
